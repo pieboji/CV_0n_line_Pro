@@ -1107,66 +1107,83 @@ export default function App() {
                   </p>
                 </div>
 
-                {/* Direct Contact Cards */}
+                {/* Direct Contact Cards (Fully Responsive) */}
                 <div className="space-y-3 pt-2">
+                  {/* Email Card with copy and mailto fallback */}
                   <div
                     onClick={handleCopyEmail}
-                    className="p-4 rounded-[2rem] bg-[#0A0A14]/80 border border-[#7B61FF]/25 hover:border-[#00F5FF]/60 flex items-center justify-between transition-all cursor-pointer group"
+                    className="p-3.5 sm:p-4 rounded-[1.8rem] sm:rounded-[2rem] bg-[#0A0A14]/90 border border-[#7B61FF]/25 hover:border-[#00F5FF]/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3 transition-all cursor-pointer group hover:bg-[#13122b]"
                   >
-                    <div className="flex items-center gap-3.5">
-                      <div className="p-2.5 rounded-xl bg-[#7B61FF]/20 text-[#00F5FF] group-hover:scale-105 transition-transform">
-                        <Mail className="w-5 h-5" />
+                    <div className="flex items-center gap-3 min-w-0 flex-1">
+                      <div className="p-2.5 rounded-xl bg-[#7B61FF]/20 text-[#00F5FF] group-hover:scale-105 transition-transform shrink-0">
+                        <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                       </div>
-                      <div>
-                        <span className="text-[11px] font-mono text-[#94A3B8]">Email Professionnel</span>
-                        <p className="text-sm font-mono font-medium text-white group-hover:text-[#00F5FF] transition-colors">
+                      <div className="min-w-0 flex-1 overflow-hidden">
+                        <span className="text-[10px] sm:text-[11px] font-mono text-[#94A3B8] block">Email Professionnel</span>
+                        <p
+                          className="text-xs sm:text-sm font-mono font-medium text-white group-hover:text-[#00F5FF] transition-colors truncate"
+                          title="pnoubissiewilfried@gmail.com"
+                        >
                           pnoubissiewilfried@gmail.com
                         </p>
                       </div>
                     </div>
-                    <span className="text-xs font-mono text-[#7B61FF] group-hover:text-[#00F5FF]">
-                      {copiedEmail ? '✓ Copié !' : 'Copier'}
-                    </span>
+                    <div className="flex items-center justify-between sm:justify-end gap-2 shrink-0 pt-1 sm:pt-0 border-t border-white/5 sm:border-t-0">
+                      <span className="text-[10px] sm:text-[11px] font-mono text-[#7B61FF] group-hover:text-[#00F5FF] px-2.5 py-1 rounded-full bg-[#7B61FF]/10 border border-[#7B61FF]/20 transition-all">
+                        {copiedEmail ? '✓ Copié !' : 'Copier'}
+                      </span>
+                      <a
+                        href="mailto:pnoubissiewilfried@gmail.com"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-[10px] sm:text-[11px] font-mono text-[#94A3B8] hover:text-[#00F5FF] px-2.5 py-1 rounded-full bg-white/5 hover:bg-white/10 transition-all flex items-center gap-1"
+                        title="Écrire un email directement"
+                      >
+                        <span>Écrire</span>
+                        <ArrowUpRight className="w-3 h-3" />
+                      </a>
+                    </div>
                   </div>
 
+                  {/* LinkedIn Card */}
                   <a
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noreferrer"
-                    className="p-4 rounded-[2rem] bg-[#0A0A14]/80 border border-[#7B61FF]/25 hover:border-[#00F5FF]/60 flex items-center justify-between transition-all group"
+                    className="p-3.5 sm:p-4 rounded-[1.8rem] sm:rounded-[2rem] bg-[#0A0A14]/90 border border-[#7B61FF]/25 hover:border-[#00F5FF]/60 flex items-center justify-between gap-3 transition-all group hover:bg-[#13122b]"
                   >
-                    <div className="flex items-center gap-3.5">
-                      <div className="p-2.5 rounded-xl bg-[#00F5FF]/20 text-[#00F5FF] group-hover:scale-105 transition-transform">
-                        <Linkedin className="w-5 h-5" />
+                    <div className="flex items-center gap-3 min-w-0 flex-1">
+                      <div className="p-2.5 rounded-xl bg-[#00F5FF]/20 text-[#00F5FF] group-hover:scale-105 transition-transform shrink-0">
+                        <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
                       </div>
-                      <div>
-                        <span className="text-[11px] font-mono text-[#94A3B8]">Réseau Professionnel</span>
-                        <p className="text-sm font-bold text-white group-hover:text-[#00F5FF] transition-colors">
+                      <div className="min-w-0 flex-1 overflow-hidden">
+                        <span className="text-[10px] sm:text-[11px] font-mono text-[#94A3B8] block">Réseau Professionnel</span>
+                        <p className="text-xs sm:text-sm font-bold text-white group-hover:text-[#00F5FF] transition-colors truncate">
                           LinkedIn / Pieboji Noubissie Wilfried
                         </p>
                       </div>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-[#94A3B8] group-hover:text-[#00F5FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    <ArrowUpRight className="w-4 h-4 text-[#94A3B8] group-hover:text-[#00F5FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
                   </a>
 
+                  {/* GitHub Card */}
                   <a
                     href="https://github.com/pieboji"
                     target="_blank"
                     rel="noreferrer"
-                    className="p-4 rounded-[2rem] bg-[#0A0A14]/80 border border-[#7B61FF]/25 hover:border-[#00F5FF]/60 flex items-center justify-between transition-all group"
+                    className="p-3.5 sm:p-4 rounded-[1.8rem] sm:rounded-[2rem] bg-[#0A0A14]/90 border border-[#7B61FF]/25 hover:border-[#00F5FF]/60 flex items-center justify-between gap-3 transition-all group hover:bg-[#13122b]"
                   >
-                    <div className="flex items-center gap-3.5">
-                      <div className="p-2.5 rounded-xl bg-[#A855F7]/20 text-[#A855F7] group-hover:scale-105 transition-transform">
-                        <Github className="w-5 h-5" />
+                    <div className="flex items-center gap-3 min-w-0 flex-1">
+                      <div className="p-2.5 rounded-xl bg-[#A855F7]/20 text-[#A855F7] group-hover:scale-105 transition-transform shrink-0">
+                        <Github className="w-4 h-4 sm:w-5 sm:h-5" />
                       </div>
-                      <div>
-                        <span className="text-[11px] font-mono text-[#94A3B8]">Code & Contributions</span>
-                        <p className="text-sm font-bold text-white group-hover:text-[#00F5FF] transition-colors">
+                      <div className="min-w-0 flex-1 overflow-hidden">
+                        <span className="text-[10px] sm:text-[11px] font-mono text-[#94A3B8] block">Code & Contributions</span>
+                        <p className="text-xs sm:text-sm font-bold text-white group-hover:text-[#00F5FF] transition-colors truncate">
                           GitHub / pieboji
                         </p>
                       </div>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-[#94A3B8] group-hover:text-[#00F5FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    <ArrowUpRight className="w-4 h-4 text-[#94A3B8] group-hover:text-[#00F5FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
                   </a>
                 </div>
 
