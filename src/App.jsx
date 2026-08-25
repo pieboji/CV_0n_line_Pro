@@ -1148,7 +1148,7 @@ export default function App() {
                   <a
                     href="https://linkedin.com"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="p-3.5 sm:p-4 rounded-[1.8rem] sm:rounded-[2rem] bg-[#0A0A14]/90 border border-[#7B61FF]/25 hover:border-[#00F5FF]/60 flex items-center justify-between gap-3 transition-all group hover:bg-[#13122b]"
                   >
                     <div className="flex items-center gap-3 min-w-0 flex-1">
@@ -1169,7 +1169,7 @@ export default function App() {
                   <a
                     href="https://github.com/pieboji"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="p-3.5 sm:p-4 rounded-[1.8rem] sm:rounded-[2rem] bg-[#0A0A14]/90 border border-[#7B61FF]/25 hover:border-[#00F5FF]/60 flex items-center justify-between gap-3 transition-all group hover:bg-[#13122b]"
                   >
                     <div className="flex items-center gap-3 min-w-0 flex-1">
